@@ -1,0 +1,211 @@
+/* =========================
+   RESET & BASE
+========================= */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f8faf8;
+}
+
+/* =========================
+   LAYOUT UTAMA
+========================= */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5ec;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  min-height: 100vh;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 32px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+.mobile-header {
+  display: none;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    height: 72px;
+    padding: 0 18px;
+
+    background: #f5f5ec;
+
+    border-bottom: 1px solid #e3e6d7;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    margin: -16px -16px 18px -16px;
+  }
+
+  .mobile-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f1f1f;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+    border: 1px solid #d8dcc7;
+
+    background: #fcfcf7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #5f6d3c;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+
+    transition: all .2s ease;
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+  }
+
+  .menu-toggle:hover {
+    background: #eef0e0;
+  }
+
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   MODAL
+========================= */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 400px;
+}
+
+.modal-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-body input,
+.modal-body select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* ══════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════ */
+.bk-toast {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background:#879657;
+  color:white;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid #98A86B;
+  font-family:"Montserrat";
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow:
+  0 14px 30px
+  rgba(122,138,82,.18);
+  animation:toastIn .2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10000;
+}
+
+@keyframes toastIn{
+
+from{
+opacity:0;
+transform:
+translateY(8px);
+}
+
+to{
+opacity:1;
+transform:
+translateY(0);
+}
+
+}

@@ -1,0 +1,467 @@
+/* ============================================================
+   settings.css  —  Pengaturan Akun page styles
+   Semua class diawali  st-  agar tidak bentrok dengan CSS lain
+   ============================================================ */
+
+/* ── Page ────────────────────────────────────────────────── */
+.st-page {
+  padding: 0 0 40px;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.st-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5a82e;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.st-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a3a2a;
+  line-height: 1.1;
+}
+
+.st-title em {
+  font-style: italic;
+  color: #2f6f4e;
+}
+
+.st-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.st-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .st-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.st-card {
+  background: #FCFCF8;
+  border: 1.5px solid #E7E8DE;
+  border-radius:30px;
+  padding:30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.02);
+  transition:.18s;
+}
+
+.st-card:hover{
+  border-color:#D8DCCB;
+}
+
+.st-card-hd {
+  margin-bottom: 20px;
+}
+
+.st-card-hd h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color:#213126;
+  margin: 0 0 3px;
+}
+
+.st-card-hd p {
+  font-size: 13px;
+  color: #8E9484;
+  margin: 0;
+}
+
+/* ── Form layout ─────────────────────────────────────────── */
+.st-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.st-row {
+  display: flex;
+  gap: 12px;
+}
+
+.st-row .st-fg {
+  flex: 1;
+}
+
+.st-fg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.st-full {
+  width: 100%;
+}
+
+.st-fg label {
+  font-size:13px;
+  font-weight:700;
+  color:#575E4E;
+}
+
+.st-fg input {
+  padding:14px 16px;
+  border-radius:18px;
+  border:1.5px solid #E4E6DB;
+  font-size: 14px;
+  color:#31352D;
+  background:#FBFBF8;
+  width: 100%;
+  box-sizing: border-box;
+  transition:.18s;
+  outline: none;
+}
+
+.st-fg input::placeholder,
+.st-fg textarea::placeholder{
+  color:#A2A79A;
+}
+
+.st-fg input:hover,
+.st-fg select:hover,
+.st-fg textarea:hover{
+  background:#FFFFFF;
+  border-color:#D7DCC9;
+}
+
+.st-fg input:focus,
+.st-fg select:focus,
+.st-fg textarea:focus{
+  background:#FFFFFF;
+  border-color:#86955C;
+  box-shadow: 0 0 0 4px rgba(132,150,90,.08);
+}
+
+/* ── Password field with eye toggle ─────────────────────── */
+.st-pass-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.st-pass-wrap input {
+  padding-right: 42px;
+}
+
+.st-eye-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 2px;
+  color:#8F9585;
+  opacity:1;
+  transition: opacity 0.15s;
+}
+
+.st-eye-btn:hover {
+  color:#6F8347;
+  transform:scale(1.05);
+}
+
+/* ── Form actions ────────────────────────────────────────── */
+.st-form-act {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.st-btn-primary {
+  height:52px;
+  padding:0 28px;
+  border:none;
+  border-radius:18px;
+  background:#6F8347;
+  color:white;
+  font-size:14px;
+  font-weight:700;
+  box-shadow: 0 10px 22px rgba(122,138,82,.16);
+  transition:.18s;
+}
+
+.st-btn-primary:hover {
+  background:#62753F;
+  transform:translateY(-1px);
+  box-shadow: 0 14px 26px rgba(122,138,82,.22);
+}
+
+
+.st-btn-primary:active{
+  transform:scale(.98);
+}
+
+.st-btn-outline {
+  background: transparent;
+  color: #2f6f4e;
+  border: 1px solid #b7d7c4;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.st-btn-outline:hover {
+  background:#F3F5EE;
+  border-color:#C7CEB6;
+}
+
+/* ── Select ──────────────────────────────────────────────── */
+.st-fg select {
+  padding: 10px 36px 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dde8e2;
+  font-size: 14px;
+  color: #222;
+  background: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  cursor: pointer;
+
+  /* custom arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.st-fg select:focus {
+  border-color: #2f6f4e;
+  box-shadow: 0 0 0 3px rgba(47, 111, 78, 0.1);
+  background-color: #fff;
+}
+
+/* ── Textarea ────────────────────────────────────────────── */
+.st-fg textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dde8e2;
+  font-size: 14px;
+  color: #222;
+  background: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.st-fg textarea:focus {
+  border-color: #2f6f4e;
+  box-shadow: 0 0 0 3px rgba(47, 111, 78, 0.1);
+  background: #fff;
+}
+
+.st-fg textarea::placeholder {
+  color: #b0bec5;
+}
+
+/* ══════════════════════════════════════════════════
+   QRIS Upload Section — tambahkan ke settings.css
+   ══════════════════════════════════════════════════ */
+
+.qris-section {
+  margin-top:28px;
+  padding-top:26px;
+  border-top:
+  1.5px dashed #DCE7D4;
+}
+
+/* Header section */
+.qris-section-hd {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.qris-section-hd-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background:#EEF4E7;
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#6F8347;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.qris-section-hd h4 {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+.qris-section-hd p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+.qris-section-hd em {
+  color: #9ca3af;
+  font-style: normal;
+}
+
+/* Badge "Tersimpan" */
+.qris-saved-badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6F8347;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ── Drop zone ── */
+.qris-dropzone {
+  border: 2px dashed #D5DACA;
+  border-radius:22px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #FBFBF8;
+}
+.qris-dropzone:hover,
+.qris-dropzone.dragging {
+  background:#F5F7F0;
+  border-color:#87955D;
+}
+.qris-dropzone-icon {
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+.qris-dropzone:hover .qris-dropzone-icon,
+.qris-dropzone.dragging .qris-dropzone-icon {
+  color:#6F8347;
+}
+.qris-dropzone-title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+.qris-dropzone-sub {
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ── Preview ── */
+.qris-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.qris-preview-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  padding: 8px;
+}
+.qris-preview-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.qris-btn-change,
+.qris-btn-delete,
+.qris-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+}
+.qris-btn-change {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.qris-btn-change:hover { background: #e5e7eb; }
+
+.qris-btn-delete {
+  background: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+.qris-btn-delete:hover { background: #ffe4e6; }
+
+.qris-btn-save {
+  background: #6F8347;
+  color: #fff;
+}
+.qris-btn-save:hover { background: #6F8347; }
+
+.qris-info-saved {
+  font-size: 12px;
+  color: #6F8347;
+  text-align: center;
+  margin: 0;
+}
+
+/* Error */
+.qris-error {
+  font-size: 12px;
+  color: #e11d48;
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+/* ── Warning di TambahKasModal ── */
+.bk-qris-warn {
+  font-size: 12px;
+  color: #d97706;
+  margin: 6px 0 0;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
