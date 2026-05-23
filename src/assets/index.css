@@ -1,0 +1,210 @@
+/* Import design system typography */
+@import './typography.css';
+
+/* =========================
+   RESET & BASE
+========================= */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--dash-bg);
+}
+
+/* =========================
+   LAYOUT UTAMA
+========================= */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--dash-bg);
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  min-height: 100vh;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 32px 40px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+.mobile-header {
+  display: none;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    height: 72px;
+    padding: 0 18px;
+
+    background: var(--dash-bg);
+
+    border-bottom: 1px solid var(--dash-border);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    margin: -16px -16px 18px -16px;
+  }
+
+  .mobile-title {
+    font-family: var(--font-body);
+    font-size: var(--fs-16);
+    font-weight: var(--fw-bold);
+    color: var(--dash-text-primary);
+    letter-spacing: var(--ls-tight);
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+    border: 1px solid var(--dash-border-strong);
+
+    background: var(--dash-surface);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: var(--peken-sage-dark);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+
+    transition: all .2s var(--ease-out);
+
+    font-size: 20px;
+
+    flex-shrink: 0;
+  }
+
+  .menu-toggle:hover {
+    background: var(--dash-surface-hover);
+  }
+
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.topbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: var(--dash-surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--dash-border);
+  margin-bottom: 16px;
+}
+
+/* =========================
+   MODAL
+========================= */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 400px;
+}
+
+.modal-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-body input,
+.modal-body select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* ══════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════ */
+.bk-toast {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: var(--peken-sage-dark);
+  color: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--peken-sage-light);
+  font-family: var(--font-body);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-bold);
+  box-shadow: 0 14px 30px rgba(122, 138, 82, .18);
+  animation: toastIn var(--dur-fast) var(--ease-out);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10000;
+}
+
+@keyframes toastIn{
+
+  from{
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
