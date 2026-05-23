@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Bell, CheckCheck, X, Package, ShoppingCart, AlertTriangle, Info, ChevronRight, Calendar, Clock, Tag } from "lucide-react";
 import "../assets/styles/notifikasi.css";
+import { API_BASE } from "../config";
 
-const API_NOTIF  = "http://127.0.0.1:8000/api/notifikasi";
-const API_READ   = "http://127.0.0.1:8000/api/notifikasi/read";
-const API_READALL = "http://127.0.0.1:8000/api/notifikasi/read-all";
+const API_NOTIF  = `${API_BASE}/api/notifikasi`;
+const API_READ   = `${API_BASE}/api/notifikasi/read`;
+const API_READALL = `${API_BASE}/api/notifikasi/read-all`;
 
 function authHeaders() {
   return {

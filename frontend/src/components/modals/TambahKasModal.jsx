@@ -3,6 +3,7 @@ import {
   RefreshCw, TrendingUp, TrendingDown, ArrowLeft,
   Save, QrCode, X, ImagePlus, Trash2, Receipt
 } from "lucide-react";
+import { API_BASE } from "../../config";
 
 const todayISO = () => new Date().toISOString().split("T")[0];
 
@@ -21,7 +22,7 @@ export default function TambahKasModal({ show, onClose, onSave, items }) {
     const fetchQris = () => {
       const token = localStorage.getItem("token");
       if (token) {
-        fetch("http://127.0.0.1:8000/api/artisan/pengaturan/profil", {
+        fetch(`${API_BASE}/api/artisan/pengaturan/profil`, {
           headers: { Authorization: `Bearer ${token}` },
         })
           .then(r => r.json())

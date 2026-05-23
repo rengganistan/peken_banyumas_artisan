@@ -6,8 +6,9 @@ import EditBarangModal from "../components/modals/EditBarangModal";
 import ConfirmDeleteModal from "../components/modals/ConfirmDeleteModal";
 import Toast from "../components/Toast";
 import "../assets/styles/stok.css";
+import { API_BASE } from "../config";
 
-const API = "http://127.0.0.1:8000/api/artisan/stok";
+const API = `${API_BASE}/api/artisan/stok`;
 
 function authHeaders() {
   return {

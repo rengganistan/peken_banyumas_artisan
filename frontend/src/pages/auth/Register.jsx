@@ -7,6 +7,7 @@ import {
   ImagePlus, X, User, Mail, Lock, Filter, Search,
 } from "lucide-react";
 import "../../assets/styles/register.css";
+import { API_BASE } from "../../config";
 
 /* ─── CONSTANTS ─── */
 
@@ -136,7 +137,7 @@ export default function Register() {
         ? formData.kategoriCustom
         : formData.kategori;
 
-      const res = await fetch("http://127.0.0.1:8000/api/auth/register", {
+      const res = await fetch(`${API_BASE}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { ClipboardList, Search, Download, Utensils } from "lucide-react";
 import "../assets/styles/riwayat.css";
+import { API_BASE } from "../config";
 
-const API = "http://127.0.0.1:8000/api/artisan/riwayat";
+const API = `${API_BASE}/api/artisan/riwayat`;
 
 function authHeaders() {
   return { Authorization: `Bearer ${localStorage.getItem("token")}` };

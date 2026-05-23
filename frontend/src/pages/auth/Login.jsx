@@ -7,6 +7,7 @@ import {
 import logobanyumas from "../../assets/images/logo-banyumas.png";
 import logo from "../../assets/images/logo.png";
 import "../../assets/styles/login.css";
+import { API_BASE } from "../../config";
 
 /* ── Left panel decorative sub-components (inline styles, zero class dependency) ── */
 
@@ -65,7 +66,7 @@ export default function Login() {
     if (!form.email || !form.password) { setError("Semua field harus diisi!"); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/login", {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: form.email, password: form.password }),

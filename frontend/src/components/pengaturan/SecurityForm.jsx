@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../../assets/styles/settings.css";
 import { Eye, EyeOff } from "lucide-react";
+import { API_BASE } from "../../config";
 
-const API = "http://127.0.0.1:8000/api/artisan/pengaturan/password";
+const API = `${API_BASE}/api/artisan/pengaturan/password`;
 
 function authHeaders() {
   return {

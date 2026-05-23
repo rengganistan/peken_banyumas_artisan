@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import QrisUploadSection from "../../components/pengaturan/QrisUploadSection";
 import "../../assets/styles/settings.css";
+import { API_BASE } from "../../config";
 
-const API = "http://127.0.0.1:8000/api/artisan/pengaturan/profil";
+const API = `${API_BASE}/api/artisan/pengaturan/profil`;
 
 function authHeaders() {
   return {

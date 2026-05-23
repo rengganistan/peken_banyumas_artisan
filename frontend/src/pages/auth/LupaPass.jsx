@@ -8,6 +8,7 @@ import {
 import logobanyumas from "../../assets/images/logo-banyumas.png";
 import logo         from "../../assets/images/logo.png";
 import "../../assets/styles/lupapass.css";
+import { API_BASE } from "../../config";
 
 /* ─── CONFIG ─── */
 const ADMIN_PHONE = "6282192058122"; // nomor WA admin
@@ -66,7 +67,7 @@ export default function ForgotPassword() {
     const clean = phone.replace(/\D/g, "");
     // Generate OTP ke DB dulu
     try {
-      await fetch("http://127.0.0.1:8000/api/auth/otp/request", {
+      await fetch(`${API_BASE}/api/auth/otp/request`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone: clean, purpose: "password_reset" }),
@@ -112,7 +113,7 @@ export default function ForgotPassword() {
     if (entered.length < OTP_LENGTH) { setOtpError("Masukkan kode OTP lengkap"); return; }
     setOtpVerifying(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/otp/verify", {
+      const res = await fetch(`${API_BASE}/api/auth/otp/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone, code: entered, purpose: "password_reset" }),
@@ -142,7 +143,7 @@ export default function ForgotPassword() {
     setPassError("");
     setSaving(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/auth/password/reset", {
+      const res = await fetch(`${API_BASE}/api/auth/password/reset`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

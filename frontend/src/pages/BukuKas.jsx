@@ -8,8 +8,9 @@ import EditKasModal from "../components/modals/EditKasModal";
 import ConfirmDeleteKasModal from "../components/modals/ConfirmDeleteKasModal";
 import Toast from "../components/Toast";
 import "../assets/styles/kas.css";
+import { API_BASE } from "../config";
 
-const API = "http://127.0.0.1:8000/api/artisan/kas";
+const API = `${API_BASE}/api/artisan/kas`;
 const fmt = (angka) => new Intl.NumberFormat("id-ID").format(angka);
 
 function authHeaders() {
@@ -55,7 +56,7 @@ export default function BukuKas() {
 
   // ── FETCH STOK untuk dropdown produk ──
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/artisan/stok", { headers: authHeaders() })
+    fetch(`${API_BASE}/api/artisan/stok`, { headers: authHeaders() })
       .then(r => r.json())
       .then(d => setStokItems(Array.isArray(d) ? d : []))
       .catch(() => {});

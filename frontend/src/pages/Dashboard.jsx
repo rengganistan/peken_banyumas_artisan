@@ -6,10 +6,11 @@ import {
   Book, Box, AlertTriangle, Inbox
 } from "lucide-react";
 import "../assets/styles/dashboard.css";
+import { API_BASE } from "../config";
 
-const API_STOK   = "http://127.0.0.1:8000/api/artisan/stok";
-const API_KAS    = "http://127.0.0.1:8000/api/artisan/kas";
-const API_NOTIF  = "http://127.0.0.1:8000/api/notifikasi";
+const API_STOK   = `${API_BASE}/api/artisan/stok`;
+const API_KAS    = `${API_BASE}/api/artisan/kas`;
+const API_NOTIF  = `${API_BASE}/api/notifikasi`;
 
 function authHeaders() {
   return { Authorization: `Bearer ${localStorage.getItem("token")}` };

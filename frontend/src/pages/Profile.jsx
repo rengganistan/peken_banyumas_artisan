@@ -3,10 +3,11 @@ import { User, Settings, LogOut, Store, MapPin, Tag, CheckCircle, Package, Recei
 import { useNavigate } from "react-router-dom";
 import ConfirmLogoutModal from "../components/modals/ConfirmLogoutModal";
 import "../assets/styles/profile.css";
+import { API_BASE } from "../config";
 
-const API_PROFIL = "http://127.0.0.1:8000/api/artisan/pengaturan/profil";
-const API_STOK   = "http://127.0.0.1:8000/api/artisan/stok";
-const API_KAS    = "http://127.0.0.1:8000/api/artisan/kas";
+const API_PROFIL = `${API_BASE}/api/artisan/pengaturan/profil`;
+const API_STOK   = `${API_BASE}/api/artisan/stok`;
+const API_KAS    = `${API_BASE}/api/artisan/kas`;
 
 function authHeaders() {
   return { Authorization: `Bearer ${localStorage.getItem("token")}` };
